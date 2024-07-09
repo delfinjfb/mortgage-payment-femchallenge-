@@ -1,0 +1,20 @@
+@use "/src/styles/colors.module.scss";
+
+.radio-group {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+	border: 1px solid colors.$blue-dark;
+	border-radius: 4px;
+}
+
+.radio-group input[type="radio"] {
+	margin-right: 10px;
+	width: 50px;
+	margin: 15px;
+}
+
+.radio-group label {
+	margin-right: 20px;
+	font-weight: bold;
+}

@@ -2,42 +2,47 @@ import "./styles/_app.scss";
 import Radios from "./components/forms/radios/Radios.js";
 
 function App() {
+	const radioOptions = [
+		{value: "repayment", label: "Repayment"},
+		{value: "interest-only", label: "Interest Only"}
+	];
+
 	return (
-		<div class="container">
-			<div class="column">
+		<div className="container">
+			<div className="column">
 				<form>
 					<h1>Mortgage Calculator </h1>
 					<button>Clear All</button>
-					<div class="inputs">
+					<div className="inputs">
 						<label for="amount">Mortgage Amount</label>
-						<div class="input-group">
+						<div className="input-group">
 							<span>£</span>
 							<input id="amount" name="amount" type="number" />
 						</div>
 
-						<div class="input-twocolumns">
-							<div class="input-column">
+						<div className="input-twocolumns">
+							<div className="input-column">
 								<label for="term">Mortgage Term</label>
-								<div class="input-group">
+								<div className="input-group">
 									<input id="term" name="term" type="number" />
 									<span>years</span>
 								</div>
 							</div>
 
-							<div class="input-column">
+							<div className="input-column">
 								<label for="rate">Interest Rate</label>
-								<div class="input-group">
+								<div className="input-group">
 									<input tid="rate" name="rate" type="number" />
 									<span>%</span>
 								</div>
 							</div>
 						</div>
 
-						<section class="mortgage-type">
+						<section className="mortgage-type">
 							<label for="">Mortgage Type</label>
-							<Radios />
+							<Radios inputName="mortgage-type" options={radioOptions} />
 						</section>
-						<section class="total-repay">
+						<section className="total-repay">
 							{/* 							<h3>Total you'll repay over the term</h3>
 							<p>&pound;539,322.94</p> */}
 						</section>
@@ -48,7 +53,7 @@ function App() {
 					</button>
 				</form>
 			</div>
-			<div class="column right">
+			<div className="column right">
 				<img src="/images/illustration-empty.svg" alt="results Icon" />
 
 				<h2>Results shown here</h2>
