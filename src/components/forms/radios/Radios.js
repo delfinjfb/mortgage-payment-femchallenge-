@@ -1,7 +1,9 @@
+import React from "react";
+import "./radios.scss";
 const Radios = () => {
 	return (
 		<>
-			<div class="radio-group">
+			<div className="radio-group">
 				<input
 					type="radio"
 					id="repayment"
@@ -11,16 +13,14 @@ const Radios = () => {
 				/>
 				<label for="repayment">Repayment</label>
 			</div>
-			<div class="radio-group">
+			<div className="radio-group">
 				<input
 					type="radio"
 					id="interest-only"
 					name="mortgage-type"
 					value="interest-only"
 				/>
-        <label for="interest-only">Interest Only 
-          
-        </label>
+				<label for="interest-only">Interest Only</label>
 			</div>
 		</>
 	);
