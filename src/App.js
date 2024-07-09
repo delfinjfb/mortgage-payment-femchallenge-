@@ -1,55 +1,62 @@
-import "./_app.scss";
+import "./styles/_app.scss";
+import Radios from "./components/forms/radios/Radios.js";
 
 function App() {
 	return (
 		<div class="container">
 			<div class="column">
-				<h1>Mortgage Calculator</h1>
-				<button>Clear All</button>
-				<div class="inputs">
-					<section class="mortgage-amount">
-						<h3>Mortgage Amount</h3>
-						<span>&pound;</span>
-						<input type="text" />
-					</section>
-					<section class="mortgage-term">
-						<h3>Mortgage Term</h3>
-						<input type="text" />
-						<span>years</span>
-					</section>
-					<section class="interest-rate">
-						<h3>Interest Rate</h3>
-						<input type="text" />
-						<span>%</span>
-					</section>
-					<section class="monthly-repayments">
-						<h3>Your monthly repayments</h3>
-						<p>&pound;1,797.74</p>
-					</section>
-					<section class="mortgage-type">
-						<h3>Mortgage Type</h3>
-						<p>Repayment</p>
-					</section>
-					<section class="total-repay">
-						<h3>Total you'll repay over the term</h3>
-						<p>&pound;539,322.94</p>
-					</section>
-				</div>
-				<button>Calculate Repayments</button>
+				<form>
+					<h1>Mortgage Calculator </h1>
+					<button>Clear All</button>
+					<div class="inputs">
+						<label for="amount">Mortgage Amount</label>
+						<div class="input-group">
+							<span>£</span>
+							<input id="amount" name="amount" type="number" />
+						</div>
+
+						<div class="input-twocolumns">
+							<div class="input-column">
+								<label for="term">Mortgage Term</label>
+								<div class="input-group">
+									<input id="term" name="term" type="number" />
+									<span>years</span>
+								</div>
+							</div>
+
+							<div class="input-column">
+								<label for="rate">Interest Rate</label>
+								<div class="input-group">
+									<input tid="rate" name="rate" type="number" />
+									<span>%</span>
+								</div>
+							</div>
+						</div>
+
+						<section class="mortgage-type">
+							<label for="">Mortgage Type</label>
+							<Radios />
+						</section>
+						<section class="total-repay">
+							{/* 							<h3>Total you'll repay over the term</h3>
+							<p>&pound;539,322.94</p> */}
+						</section>
+					</div>
+					<button type="submit">
+						<img src="/images/icon-calculator.svg" alt="Calculator Icon" />
+						Calculate Repayments
+					</button>
+				</form>
 			</div>
 			<div class="column right">
-				<h2>Your results</h2>
+				<img src="/images/illustration-empty.svg" alt="results Icon" />
+
+				<h2>Results shown here</h2>
 				<p>
-					Your results are shown below based on the information you provided. To
-					adjust the results, edit the form and click "calculate repayments"
-					again.
+					Complete the form and click "calculate repayments" to see what your
+					monthly repayments would be.
 				</p>
-
-				<p>This content will be displayed in the second column.</p>
 			</div>
-
-			<header class="header"></header>
-			<div class="results "></div>
 		</div>
 	);
 }
