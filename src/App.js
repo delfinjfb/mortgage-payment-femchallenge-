@@ -2,6 +2,11 @@ import "./styles/_app.scss";
 import Radios from "./components/forms/radios/Radios.js";
 
 function App() {
+	const radioOptions = [
+		{value: "repayment", label: "Repayment"},
+		{value: "interest-only", label: "Interest Only"}
+	];
+
 	return (
 		<div className="container">
 			<div className="column">
@@ -35,7 +40,7 @@ function App() {
 
 						<section className="mortgage-type">
 							<label for="">Mortgage Type</label>
-							<Radios />
+							<Radios inputName="mortgage-type" options={radioOptions} />
 						</section>
 						<section className="total-repay">
 							{/* 							<h3>Total you'll repay over the term</h3>

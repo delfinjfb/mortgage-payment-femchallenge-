@@ -1,27 +1,19 @@
 import React from "react";
 import "./radios.scss";
-const Radios = () => {
+const Radios = ({inputName, options}) => {
 	return (
 		<>
-			<div className="radio-group">
-				<input
-					type="radio"
-					id="repayment"
-					name="mortgage-type"
-					value="repayment"
-					checked
-				/>
-				<label for="repayment">Repayment</label>
-			</div>
-			<div className="radio-group">
-				<input
-					type="radio"
-					id="interest-only"
-					name="mortgage-type"
-					value="interest-only"
-				/>
-				<label for="interest-only">Interest Only</label>
-			</div>
+			{options.map(option => (
+				<div className="radio-group" key={option.value}>
+					<input
+						type="radio"
+						id={option.value}
+						name={inputName}
+						value={option.value}
+					/>
+					<label for={option.value}>{option.label}</label>
+				</div>
+			))}
 		</>
 	);
 };
