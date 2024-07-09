@@ -1,0 +1,139 @@
+@use "colors.module";
+
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #e3f4fc;
+	display: flex; /* Flexbox for the body */
+	flex-direction: column;
+	justify-content: center; /* Vertically center child elements */
+	align-items: center; /* Horizontally center child elements (optional) */
+	max-height: 100vh; /* Makes body fill viewport height (optional) */
+	color: colors.$blue-dark;
+}
+
+.container {
+	max-width: 800px;
+	border: 1px solid #ddd;
+	background-color: white;
+	display: flex; /* Flexbox for the container (optional) */
+	flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+	border-radius: 30px;
+	margin: 0 auto;
+}
+
+.column {
+	flex: 1; /* Makes columns equally sized */
+	padding: 10px; /* Optional padding for content */
+}
+
+.right {
+	background-color: #133040;
+	color: white;
+	border-radius: 0 30px 30px 40px;
+}
+
+/* Media query for smaller screens (adjust breakpoint as needed) */
+@media (max-width: 768px) {
+	.column {
+		flex: 100%; /* Makes columns stack on smaller screens */
+	}
+}
+
+.results {
+	margin-bottom: 20px;
+}
+
+.results p {
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+/* Removed unused styles for .inputs and sections within .inputs */
+
+.column form label {
+	/* Moved styles for labels inside form */
+	display: block;
+	margin: 10px 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.input-group {
+	/* Styles for input group */
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+	border: 1px solid #0e2431;
+	border-radius: 5px;
+	outline: none;
+}
+
+.input-group span {
+	background-color: colors.$blue-light;
+	padding: 10px;
+	border-right: 1px solid #e3e9ef;
+	border-radius: 4px;
+	font-weight: bold;
+}
+
+.input-group input {
+	border: none;
+	padding: 10px;
+	width: 100%;
+	font-size: 16px;
+	outline: none;
+	border-radius: 4px;
+}
+
+.radio-group {
+	/* Styles for radio group */
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+	border: 1px solid colors.$blue-dark;
+	border-radius: 4px;
+}
+
+.radio-group input[type="radio"] {
+	margin-right: 10px;
+	width: 50px;
+	margin: 15px;
+}
+
+.radio-group label {
+	margin-right: 20px;
+	font-weight: bold;
+}
+
+button {
+	/* Styles for all buttons */
+	background-color: colors.$primary-green;
+	border: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	font-weight: bold;
+}
+
+.input-twocolumns {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+}
+.input-column {
+	flex: 1 1;
+	margin: 0 5px;
+}
+
+button img {
+	margin-right: 10px;
+	width: 24px;
+	height: 24px;
+}
