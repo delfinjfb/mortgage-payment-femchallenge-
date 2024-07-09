@@ -5,11 +5,11 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: #e3f4fc;
-	display: flex; /* Flexbox for the body */
+	display: flex;
 	flex-direction: column;
-	justify-content: center; /* Vertically center child elements */
-	align-items: center; /* Horizontally center child elements (optional) */
-	max-height: 100vh; /* Makes body fill viewport height (optional) */
+	justify-content: center;
+	align-items: center;
+	max-height: 100vh;
 	color: colors.$blue-dark;
 }
 
@@ -17,27 +17,36 @@ body {
 	max-width: 800px;
 	border: 1px solid #ddd;
 	background-color: white;
-	display: flex; /* Flexbox for the container (optional) */
-	flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+	display: flex;
+	flex-wrap: wrap;
 	border-radius: 30px;
 	margin: 0 auto;
 }
 
 .column {
-	flex: 1; /* Makes columns equally sized */
-	padding: 10px; /* Optional padding for content */
+	flex: 1;
+	padding: 10px;
 }
 
 .right {
 	background-color: #133040;
 	color: white;
 	border-radius: 0 30px 30px 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 0 25px;
+	text-align: center;
+	p {
+		color: colors.$regent-gray;
+	}
 }
 
 /* Media query for smaller screens (adjust breakpoint as needed) */
 @media (max-width: 768px) {
 	.column {
-		flex: 100%; /* Makes columns stack on smaller screens */
+		flex: 100%;
 	}
 }
 
@@ -50,10 +59,7 @@ body {
 	line-height: 1.5;
 }
 
-/* Removed unused styles for .inputs and sections within .inputs */
-
 .column form label {
-	/* Moved styles for labels inside form */
 	display: block;
 	margin: 10px 0;
 }
@@ -63,7 +69,6 @@ body {
 }
 
 .input-group {
-	/* Styles for input group */
 	display: flex;
 	align-items: center;
 	margin-bottom: 20px;
@@ -90,7 +95,6 @@ body {
 }
 
 .radio-group {
-	/* Styles for radio group */
 	display: flex;
 	align-items: center;
 	margin-bottom: 20px;
@@ -110,7 +114,6 @@ body {
 }
 
 button {
-	/* Styles for all buttons */
 	background-color: colors.$primary-green;
 	border: none;
 	padding: 10px 20px;
