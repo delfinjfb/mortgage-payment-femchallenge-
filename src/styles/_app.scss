@@ -1,5 +1,6 @@
 @use "colors.module";
 
+
 @font-face {
 	font-family: "PlusJakartaSans";
 	src: url("/fonts/PlusJakartaSans-Medium.ttf") format("truetype"),
@@ -125,25 +126,6 @@ body {
 	font-size: 16px;
 	outline: none;
 	border-radius: 4px;
-}
-
-.radio-group {
-	display: flex;
-	align-items: center;
-	margin-bottom: 20px;
-	border: 1px solid colors.$blue-dark;
-	border-radius: 4px;
-}
-
-.radio-group input[type="radio"] {
-	margin-right: 10px;
-	width: 50px;
-	margin: 15px;
-}
-
-.radio-group label {
-	margin-right: 20px;
-	font-weight: bold;
 }
 
 button {
