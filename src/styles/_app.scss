@@ -1,7 +1,22 @@
 @use "colors.module";
 
+@font-face {
+	font-family: "PlusJakartaSans";
+	src: url("/fonts/PlusJakartaSans-Medium.ttf") format("truetype"),
+		url("/fonts/PlusJakartaSans-Bold.ttf") format("truetype");
+	font-weight: 500;
+}
+.bold {
+	font-weight: 700;
+	font-family: "PlusJakartaSans", Arial, sans-serif;
+}
+.medium {
+	font-weight: 500;
+	font-family: "PlusJakartaSans", Arial, sans-serif;
+}
+
 body {
-	font-family: Arial, sans-serif;
+	font-family: "PlusJakartaSans", Arial, sans-serif;
 	margin: 0;
 	padding: 0;
 	background-color: #e3f4fc;
@@ -10,11 +25,11 @@ body {
 	justify-content: center;
 	align-items: center;
 	max-height: 100vh;
-	color: colors.$blue-dark;
+	color: colors.$firefly;
 }
 
 .container {
-	max-width: 800px;
+	max-width: 1000px;
 	border: 1px solid #ddd;
 	background-color: white;
 	display: flex;
@@ -25,7 +40,7 @@ body {
 
 .column {
 	flex: 1;
-	padding: 10px;
+	padding: 30px;
 }
 
 .right {
@@ -45,8 +60,26 @@ body {
 
 /* Media query for smaller screens (adjust breakpoint as needed) */
 @media (max-width: 768px) {
+	body {
+		max-height: none;
+	}
+	.container {
+		border-radius: 0;
+	}
 	.column {
 		flex: 100%;
+		border-radius: 0;
+	}
+	.input-twocolumns {
+		flex-direction: column;
+	}
+	.input-column {
+		margin: unset;
+	}
+
+	button {
+		margin: auto;
+		width: 100%;
 	}
 }
 
@@ -132,7 +165,7 @@ button {
 }
 .input-column {
 	flex: 1 1;
-	margin: 0 5px;
+	margin: 0 10px 0 0;
 }
 
 button img {
