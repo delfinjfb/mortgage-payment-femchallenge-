@@ -15,7 +15,7 @@ function App() {
 					<h1>Mortgage Calculator </h1>
 					<button>Clear All</button>
 					<div className="inputs">
-						<label for="amount">Mortgage Amount</label>
+						<label htmlFor="amount">Mortgage Amount</label>
 						<div className="input-group">
 							<Number
 								inputName={"amount"}
@@ -26,7 +26,7 @@ function App() {
 						</div>
 						<div className="twoColumns">
 							<div className="twoColumns-column">
-								<label for="term">Mortgage Term</label>
+								<label htmlFor="term">Mortgage Term</label>
 								<div className="input-group">
 									<Number
 										inputName={"term"}
@@ -38,7 +38,7 @@ function App() {
 								</div>
 							</div>
 							<div className="twoColumns-column">
-								<label for="rate">Interest Rate</label>
+								<label htmlFor="rate">Interest Rate</label>
 								<div className="input-group">
 									<Number
 										inputName={"rate"}
@@ -52,7 +52,7 @@ function App() {
 						</div>
 
 						<section className="mortgage-type">
-							<label for="">Mortgage Type</label>
+							<label htmlFor="">Mortgage Type</label>
 							<Radios inputName="mortgage-type" options={radioOptions} />
 						</section>
 						<section className="total-repay"></section>
