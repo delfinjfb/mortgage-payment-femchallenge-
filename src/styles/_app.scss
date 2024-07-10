@@ -83,15 +83,6 @@ body {
 	}
 }
 
-.results {
-	margin-bottom: 20px;
-}
-
-.results p {
-	font-size: 14px;
-	line-height: 1.5;
-}
-
 .column form label {
 	display: block;
 	margin: 10px 0;
@@ -113,14 +104,14 @@ button {
 	font-weight: bold;
 }
 
-.input-twocolumns {
+.twoColumns {
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0 auto;
-}
-.input-column {
-	flex: 1 1;
-	margin: 0 10px 0 0;
+	&-column {
+		flex: 1 1;
+		margin: 0 10px 0 0;
+	}
 }
 
 button img {

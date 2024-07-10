@@ -24,8 +24,8 @@ function App() {
 								textInput={"£"}
 							/>
 						</div>
-						<div className="input-twocolumns">
-							<div className="input-column">
+						<div className="twoColumns">
+							<div className="twoColumns-column">
 								<label for="term">Mortgage Term</label>
 								<div className="input-group">
 									<Number
@@ -37,7 +37,7 @@ function App() {
 									/>
 								</div>
 							</div>
-							<div className="input-column">
+							<div className="twoColumns-column">
 								<label for="rate">Interest Rate</label>
 								<div className="input-group">
 									<Number
