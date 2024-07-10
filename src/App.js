@@ -1,5 +1,6 @@
 import "./styles/_app.scss";
 import Radios from "./components/forms/radios/Radios.js";
+import Number from "./components/forms/input/number/Number.js";
 
 function App() {
 	const radioOptions = [
@@ -16,24 +17,36 @@ function App() {
 					<div className="inputs">
 						<label for="amount">Mortgage Amount</label>
 						<div className="input-group">
-							<span>£</span>
-							<input id="amount" name="amount" type="number" />
+							<Number
+								inputName={"amount"}
+								min={0}
+								max={100000}
+								textInput={"£"}
+							/>
 						</div>
-
 						<div className="input-twocolumns">
 							<div className="input-column">
 								<label for="term">Mortgage Term</label>
 								<div className="input-group">
-									<input id="term" name="term" type="number" />
-									<span>years</span>
+									<Number
+										inputName={"term"}
+										min={0}
+										max={100}
+										textInput={"years"}
+										textImputRight={false}
+									/>
 								</div>
 							</div>
-
 							<div className="input-column">
 								<label for="rate">Interest Rate</label>
 								<div className="input-group">
-									<input tid="rate" name="rate" type="number" />
-									<span>%</span>
+									<Number
+										inputName={"rate"}
+										min={10}
+										max={100}
+										textInput={"%"}
+										textImputRight={false}
+									/>
 								</div>
 							</div>
 						</div>
@@ -42,10 +55,7 @@ function App() {
 							<label for="">Mortgage Type</label>
 							<Radios inputName="mortgage-type" options={radioOptions} />
 						</section>
-						<section className="total-repay">
-							{/* 							<h3>Total you'll repay over the term</h3>
-							<p>&pound;539,322.94</p> */}
-						</section>
+						<section className="total-repay"></section>
 					</div>
 					<button type="submit">
 						<img src="/images/icon-calculator.svg" alt="Calculator Icon" />
