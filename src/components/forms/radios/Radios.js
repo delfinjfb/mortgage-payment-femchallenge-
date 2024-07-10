@@ -5,7 +5,7 @@ const Radios = ({inputName, options, selectedValue, onChange}) => {
 	return (
 		<>
 			{options.map(option => (
-				<div className="radio-group" key={option.value}>
+				<div className="radio-option" key={option.value}>
 					<input
 						type="radio"
 						id={option.value}
