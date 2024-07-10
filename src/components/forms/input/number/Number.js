@@ -8,11 +8,14 @@ const Number = ({
 	textInput,
 	textImputRight = true,
 	value,
-	onChange
+	onChange,
+	error
 }) => {
 	return (
-		<>
-			{textImputRight ? <span>{textInput}</span> : null}
+		<div className={`input-group ${error ? "invalid" : "valid"}`}>
+			{textImputRight ? (
+				<span className="input-group-text">{textInput}</span>
+			) : null}
 			<input
 				id={inputName}
 				name={inputName}
@@ -22,8 +25,10 @@ const Number = ({
 				value={value}
 				onChange={onChange}
 			/>
-			{!textImputRight && <span>{textInput}</span>}
-		</>
+			{!textImputRight && <span className="input-group-text">{textInput}</span>}
+
+			{error && <span className="error">{error}</span>}
+		</div>
 	);
 };
 

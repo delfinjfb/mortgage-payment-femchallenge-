@@ -7,14 +7,27 @@
 	border-radius: 5px;
 	outline: none;
 	position: relative;
+	&-text {
+		background-color: colors.$blue-light;
+		padding: 10px;
+		border-radius: 4px;
+		font-weight: bold;
+	}
+
+	&.error {
+		border-color: red;
+	}
+
+	&.invalid {
+		border-color: red;
+		& .input-group-text {
+			background-color: red;
+			color: white;
+		}
+	}
 }
 
 .input-group span {
-	background-color: colors.$blue-light;
-	padding: 10px;
-	border-right: 1px solid #e3e9ef;
-	border-radius: 4px;
-	font-weight: bold;
 }
 
 .input-group input {
@@ -25,6 +38,7 @@
 	outline: none;
 	border-radius: 4px;
 }
+
 .error {
 	color: red;
 	font-size: 0.75rem;
