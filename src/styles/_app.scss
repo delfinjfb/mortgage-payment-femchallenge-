@@ -1,6 +1,5 @@
 @use "colors.module";
 
-
 @font-face {
 	font-family: "PlusJakartaSans";
 	src: url("/fonts/PlusJakartaSans-Medium.ttf") format("truetype"),
@@ -21,12 +20,12 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: #e3f4fc;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	max-height: 100vh;
+	display: flex; /* Already set */
+	flex-direction: column; /* Already set */
+	justify-content: center; /* Added for centering */
+	align-items: center; /* Added for centering */
 	color: colors.$firefly;
+	min-height: 100vh;
 }
 
 .container {
