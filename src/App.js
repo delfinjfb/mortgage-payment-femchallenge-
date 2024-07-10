@@ -8,7 +8,7 @@ function App() {
 		amount: "",
 		term: "",
 		rate: "",
-		"mortgage-type": ""
+		mortgageType: ""
 	});
 	const [errors, setErrors] = useState({});
 
@@ -27,18 +27,18 @@ function App() {
 			amount: "",
 			term: "",
 			rate: "",
-			"mortgage-type": ""
+			mortgageType: ""
 		});
 		setErrors({});
 	};
 
 	const validateForm = () => {
 		let newErrors = {};
-		if (!formData.amount) newErrors.amount = "Mortgage amount is required";
-		if (!formData.term) newErrors.term = "Mortgage term is required";
-		if (!formData.rate) newErrors.rate = "Interest rate is required";
-		if (!formData["mortgage-type"])
-			newErrors["mortgage-type"] = "Mortgage type is required";
+		const requiredText = "This fiels is required";
+		if (!formData.amount) newErrors.amount = requiredText;
+		if (!formData.term) newErrors.term = requiredText;
+		if (!formData.rate) newErrors.rate = requiredText;
+		if (!formData.mortgageType) newErrors.mortgageType = requiredText;
 
 		setErrors(newErrors);
 		return Object.keys(newErrors).length === 0;
@@ -64,62 +64,58 @@ function App() {
 					</button>
 					<div className="inputs">
 						<label htmlFor="amount">Mortgage Amount</label>
-						<div className="input-group">
-							<Number
-								inputName={"amount"}
-								value={formData.amount}
-								onChange={handleChange}
-								min={0}
-								max={100000}
-								textInput={"£"}
-							/>
-							{errors.amount && <span className="error">{errors.amount}</span>}
-						</div>
+
+						<Number
+							inputName={"amount"}
+							value={formData.amount}
+							onChange={handleChange}
+							min={0}
+							max={100000}
+							textInput={"£"}
+							error={errors.amount}
+						/>
 						<div className="twoColumns">
 							<div className="twoColumns-column">
 								<label htmlFor="term">Mortgage Term</label>
-								<div className="input-group">
-									<Number
-										inputName={"term"}
-										value={formData.term}
-										onChange={handleChange}
-										min={0}
-										max={100}
-										textInput={"years"}
-										textImputRight={false}
-									/>
-									{errors.term && <span className="error">{errors.term}</span>}
-								</div>
+								<Number
+									inputName={"term"}
+									value={formData.term}
+									onChange={handleChange}
+									min={0}
+									max={100}
+									textInput={"years"}
+									textImputRight={false}
+									error={errors.term}
+								/>
 							</div>
 							<div className="twoColumns-column">
 								<label htmlFor="rate">Interest Rate</label>
-								<div className="input-group">
-									<Number
-										inputName={"rate"}
-										value={formData.rate}
-										onChange={handleChange}
-										min={0}
-										max={10}
-										textInput={"%"}
-										textImputRight={false}
-									/>
-									{errors.rate && <span className="error">{errors.rate}</span>}
-								</div>
+
+								<Number
+									inputName={"rate"}
+									value={formData.rate}
+									onChange={handleChange}
+									min={10}
+									max={100}
+									textInput={"%"}
+									textImputRight={false}
+									error={errors.rate}
+								/>
 							</div>
 						</div>
 
 						<section className="mortgage-type">
 							<label htmlFor="">Mortgage Type</label>
+
 							<Radios
-								inputName="mortgage-type"
+								inputName="mortgageType"
 								options={radioOptions}
-								selectedValue={formData["mortgage-type"]}
+								selectedValue={formData.mortgageType}
 								onChange={handleChange}
+								error={errors.mortgageType}
 							/>
-							{errors["mortgage-type"] && (
-								<span className="error">{errors["mortgage-type"]}</span>
-							)}
 						</section>
+
 						<section className="total-repay"></section>
 					</div>
 					<button type="submit">
