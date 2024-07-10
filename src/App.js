@@ -98,8 +98,8 @@ function App() {
 										inputName={"rate"}
 										value={formData.rate}
 										onChange={handleChange}
-										min={10}
-										max={100}
+										min={0}
+										max={10}
 										textInput={"%"}
 										textImputRight={false}
 									/>
