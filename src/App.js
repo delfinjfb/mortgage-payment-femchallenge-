@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import "./styles/_app.scss";
 import Radios from "./components/forms/radios/Radios.js";
 import Number from "./components/forms/input/number/Number.js";
@@ -10,15 +10,16 @@ function App() {
 		rate: "",
 		"mortgage-type": ""
 	});
+	const [errors, setErrors] = useState({});
 
 	const radioOptions = [
 		{value: "repayment", label: "Repayment"},
 		{value: "interest-only", label: "Interest Only"}
 	];
 
-	const handleChange = (e) => {
-		const { name, value } = e.target;
-		setFormData({ ...formData, [name]: value });
+	const handleChange = e => {
+		const {name, value} = e.target;
+		setFormData({...formData, [name]: value});
 	};
 
 	const handleClear = () => {
@@ -28,14 +29,39 @@ function App() {
 			rate: "",
 			"mortgage-type": ""
 		});
+		setErrors({});
+	};
+
+	const validateForm = () => {
+		let newErrors = {};
+		if (!formData.amount) newErrors.amount = "Mortgage amount is required";
+		if (!formData.term) newErrors.term = "Mortgage term is required";
+		if (!formData.rate) newErrors.rate = "Interest rate is required";
+		if (!formData["mortgage-type"])
+			newErrors["mortgage-type"] = "Mortgage type is required";
+
+		setErrors(newErrors);
+		return Object.keys(newErrors).length === 0;
+	};
+
+	const handleSubmit = e => {
+		e.preventDefault();
+		if (validateForm()) {
+			// Perform the calculation or further actions
+			console.log("Form is valid, proceed with submission");
+		} else {
+			console.log("Form is invalid, show errors");
+		}
 	};
 
 	return (
 		<div className="container">
 			<div className="column">
-				<form>
+				<form onSubmit={handleSubmit}>
 					<h1>Mortgage Calculator</h1>
-					<button type="button" onClick={handleClear}>Clear All</button>
+					<button type="button" onClick={handleClear}>
+						Clear All
+					</button>
 					<div className="inputs">
 						<label htmlFor="amount">Mortgage Amount</label>
 						<div className="input-group">
@@ -47,6 +73,7 @@ function App() {
 								max={100000}
 								textInput={"£"}
 							/>
+							{errors.amount && <span className="error">{errors.amount}</span>}
 						</div>
 						<div className="twoColumns">
 							<div className="twoColumns-column">
@@ -61,6 +88,7 @@ function App() {
 										textInput={"years"}
 										textImputRight={false}
 									/>
+									{errors.term && <span className="error">{errors.term}</span>}
 								</div>
 							</div>
 							<div className="twoColumns-column">
@@ -75,6 +103,7 @@ function App() {
 										textInput={"%"}
 										textImputRight={false}
 									/>
+									{errors.rate && <span className="error">{errors.rate}</span>}
 								</div>
 							</div>
 						</div>
@@ -87,6 +116,9 @@ function App() {
 								selectedValue={formData["mortgage-type"]}
 								onChange={handleChange}
 							/>
+							{errors["mortgage-type"] && (
+								<span className="error">{errors["mortgage-type"]}</span>
+							)}
 						</section>
 						<section className="total-repay"></section>
 					</div>
