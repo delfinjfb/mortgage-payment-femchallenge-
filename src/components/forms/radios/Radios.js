@@ -1,6 +1,7 @@
 import React from "react";
 import "./radios.scss";
-const Radios = ({inputName, options}) => {
+
+const Radios = ({inputName, options, selectedValue, onChange}) => {
 	return (
 		<>
 			{options.map(option => (
@@ -10,6 +11,8 @@ const Radios = ({inputName, options}) => {
 						id={option.value}
 						name={inputName}
 						value={option.value}
+						checked={selectedValue === option.value}
+						onChange={onChange}
 					/>
 					<label htmlFor={option.value}>{option.label}</label>
 				</div>
