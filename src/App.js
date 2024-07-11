@@ -18,8 +18,11 @@ function App() {
 	];
 
 	const handleChange = e => {
-		const {name, value} = e.target;
-		setFormData({...formData, [name]: value});
+		const {name, value, type, checked} = e.target;
+		setFormData(prevFormData => ({
+			...prevFormData,
+			[name]: type === "checkbox" ? checked : value
+		}));
 	};
 
 	const handleClear = () => {
@@ -34,7 +37,7 @@ function App() {
 
 	const validateForm = () => {
 		let newErrors = {};
-		const requiredText = "This fiels is required";
+		const requiredText = "This field is required";
 		if (!formData.amount) newErrors.amount = requiredText;
 		if (!formData.term) newErrors.term = requiredText;
 		if (!formData.rate) newErrors.rate = requiredText;
@@ -64,7 +67,6 @@ function App() {
 					</button>
 					<div className="inputs">
 						<label htmlFor="amount">Mortgage Amount</label>
-
 						<Number
 							inputName={"amount"}
 							value={formData.amount}
@@ -90,7 +92,6 @@ function App() {
 							</div>
 							<div className="twoColumns-column">
 								<label htmlFor="rate">Interest Rate</label>
-
 								<Number
 									inputName={"rate"}
 									value={formData.rate}
@@ -100,13 +101,13 @@ function App() {
 									textInput={"%"}
 									textImputRight={false}
 									error={errors.rate}
+									isDecimalAllowed={true}
 								/>
 							</div>
 						</div>
 
 						<section className="mortgage-type">
 							<label htmlFor="">Mortgage Type</label>
-
 							<Radios
 								inputName="mortgageType"
 								options={radioOptions}
@@ -115,7 +116,6 @@ function App() {
 								error={errors.mortgageType}
 							/>
 						</section>
-
 						<section className="total-repay"></section>
 					</div>
 					<button type="submit">
