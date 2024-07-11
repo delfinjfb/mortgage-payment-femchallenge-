@@ -105,6 +105,9 @@ button {
 	display: flex;
 	align-items: center;
 	font-weight: bold;
+	:hover {
+		background-color: yellow;
+	}
 }
 
 .twoColumns {

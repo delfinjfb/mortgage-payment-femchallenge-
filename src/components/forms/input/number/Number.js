@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./number.scss";
 
 const Number = ({
@@ -11,11 +11,22 @@ const Number = ({
 	onChange,
 	error
 }) => {
+	const [isActive, setIsActive] = useState(false);
+
+	console.log(inputName + " - " + isActive);
+
+	const handleFocus = () => setIsActive(true);
+	const handleBlur = () => setIsActive(false);
 	return (
-		<div className={`input-group ${error ? "invalid" : "valid"}`}>
+		<div
+			className={`input-group ${error ? "invalid" : "valid"} ${
+				isActive ? "active" : ""
+			}`}
+		>
 			{textImputRight ? (
 				<span className="input-group-text">{textInput}</span>
 			) : null}
+			{}
 			<input
 				id={inputName}
 				name={inputName}
@@ -24,6 +35,8 @@ const Number = ({
 				max={max}
 				value={value}
 				onChange={onChange}
+				onFocus={handleFocus}
+				onBlur={handleBlur}
 			/>
 			{!textImputRight && <span className="input-group-text">{textInput}</span>}
 

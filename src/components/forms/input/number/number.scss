@@ -25,9 +25,13 @@
 			color: white;
 		}
 	}
-}
 
-.input-group span {
+	&.active {
+		border: 2px solid colors.$primary-green;
+		& .input-group-text {
+			background-color: colors.$primary-green;
+		}
+	}
 }
 
 .input-group input {
