@@ -32,6 +32,9 @@
 			background-color: colors.$primary-green;
 		}
 	}
+	&:hover {
+		cursor: pointer;
+	}
 }
 
 .input-group input {
