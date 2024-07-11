@@ -12,6 +12,8 @@ function App() {
 	});
 	const [errors, setErrors] = useState({});
 
+	const [results, setResults] = useState(null);
+
 	const radioOptions = [
 		{value: "repayment", label: "Repayment"},
 		{value: "interest-only", label: "Interest Only"}
@@ -33,6 +35,7 @@ function App() {
 			mortgageType: ""
 		});
 		setErrors({});
+		setResults(null);
 	};
 
 	const validateForm = () => {
@@ -50,11 +53,42 @@ function App() {
 	const handleSubmit = e => {
 		e.preventDefault();
 		if (validateForm()) {
-			// Perform the calculation or further actions
+			const results = calculateRepayment();
+			setResults(results);
 			console.log("Form is valid, proceed with submission");
 		} else {
 			console.log("Form is invalid, show errors");
 		}
+	};
+
+	const calculateRepayment = () => {
+		const principal = parseFloat(formData.amount);
+		const annualInterestRate = parseFloat(formData.rate) / 100;
+		const monthlyInterestRate = annualInterestRate / 12;
+		const numberOfPayments = parseInt(formData.term) * 12;
+
+		let monthlyRepayment;
+		if (formData.mortgageType === "repayment") {
+			monthlyRepayment =
+				(monthlyInterestRate * principal) /
+				(1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments));
+		} else {
+			monthlyRepayment = monthlyInterestRate * principal;
+		}
+
+		const totalRepayment = monthlyRepayment * numberOfPayments;
+
+		return {
+			monthlyRepayment: formatCurrency(monthlyRepayment.toFixed(2)),
+			totalRepayment: formatCurrency(totalRepayment.toFixed(2))
+		};
+	};
+
+	const formatCurrency = value => {
+		return new Intl.NumberFormat("en-GB", {
+			style: "currency",
+			currency: "GBP"
+		}).format(value);
 	};
 
 	return (
@@ -72,7 +106,7 @@ function App() {
 							value={formData.amount}
 							onChange={handleChange}
 							min={0}
-							max={100000}
+							max={1000000}
 							textInput={"£"}
 							error={errors.amount}
 						/>
@@ -96,7 +130,7 @@ function App() {
 									inputName={"rate"}
 									value={formData.rate}
 									onChange={handleChange}
-									min={10}
+									min={2}
 									max={100}
 									textInput={"%"}
 									textImputRight={false}
@@ -125,12 +159,31 @@ function App() {
 				</form>
 			</div>
 			<div className="column right">
-				<img src="/images/illustration-empty.svg" alt="results Icon" />
-				<h2>Results shown here</h2>
-				<p>
-					Complete the form and click "calculate repayments" to see what your
-					monthly repayments would be.
-				</p>
+				{results ? (
+					<>
+						<h1>Your results</h1>
+						<p>
+							Your results are shown below based on the information you
+							provided. To adjust the results, edit the form and click
+							"calculate repayments" again.
+						</p>
+						<div className="results">
+							<p>Your monthly repayments</p>
+							<h3>{results.monthlyRepayment}</h3>
+							<p>Total you'll repay over the term</p>
+							<h4>{results.totalRepayment}</h4>
+						</div>
+					</>
+				) : (
+					<>
+						<img src="/images/illustration-empty.svg" alt="results Icon" />
+						<h2>Results shown here</h2>
+						<p>
+							Complete the form and click "calculate repayments" to see what
+							your monthly repayments would be.
+						</p>
+					</>
+				)}
 			</div>
 		</div>
 	);
