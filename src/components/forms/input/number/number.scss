@@ -6,14 +6,35 @@
 	border: 1px solid #0e2431;
 	border-radius: 5px;
 	outline: none;
-}
+	position: relative;
+	&-text {
+		background-color: colors.$blue-light;
+		padding: 10px;
+		border-radius: 4px;
+		font-weight: bold;
+	}
 
-.input-group span {
-	background-color: colors.$blue-light;
-	padding: 10px;
-	border-right: 1px solid #e3e9ef;
-	border-radius: 4px;
-	font-weight: bold;
+	&.error {
+		border-color: red;
+	}
+
+	&.invalid {
+		border-color: red;
+		& .input-group-text {
+			background-color: red;
+			color: white;
+		}
+	}
+
+	&.active {
+		border: 2px solid colors.$primary-green;
+		& .input-group-text {
+			background-color: colors.$primary-green;
+		}
+	}
+	&:hover {
+		cursor: pointer;
+	}
 }
 
 .input-group input {
@@ -23,4 +44,12 @@
 	font-size: 16px;
 	outline: none;
 	border-radius: 4px;
+}
+
+.error {
+	color: red;
+	font-size: 0.75rem;
+	position: absolute;
+	bottom: -20px;
+	left: 0;
 }
