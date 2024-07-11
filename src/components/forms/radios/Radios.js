@@ -3,9 +3,14 @@ import "./radios.scss";
 
 const Radios = ({inputName, options, selectedValue, onChange, error}) => {
 	return (
-		<div className="radio-group">
+		<div className="radio-group ">
 			{options.map(option => (
-				<div className="radio-option" key={option.value}>
+				<div
+					className={`radio-option  ${
+						selectedValue === option.value ? "selected" : ""
+					}`}
+					key={option.value}
+				>
 					<input
 						type="radio"
 						id={option.value}
