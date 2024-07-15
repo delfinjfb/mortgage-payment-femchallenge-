@@ -19,7 +19,7 @@ const Radios = ({inputName, options, selectedValue, onChange, error}) => {
 						checked={selectedValue === option.value}
 						onChange={onChange}
 					/>
-					<label htmlFor={option.value}>{option.label}</label>
+					<label htmlFor={`${inputName}-${option.value}`}>{option.label}</label>
 				</div>
 			))}
 			{error && <span className="error">{error}</span>}
