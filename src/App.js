@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import "./styles/_app.scss";
 import Radios from "./components/forms/radios/Radios.js";
 import Number from "./components/forms/input/number/Number.js";
+import Link from "./components/forms/link/Link.js";
 
 function App() {
 	const [formData, setFormData] = useState({
@@ -95,10 +96,10 @@ function App() {
 		<div className="container">
 			<div className="column">
 				<form onSubmit={handleSubmit}>
-					<h1>Mortgage Calculator</h1>
-					<button type="button" onClick={handleClear}>
-						Clear All
-					</button>
+					<div class="header">
+						<h1>Mortgage Calculator</h1>
+						<Link onClick={handleClear}>Clear All</Link>
+					</div>
 					<div className="inputs">
 						<label htmlFor="amount">Mortgage Amount</label>
 						<Number
