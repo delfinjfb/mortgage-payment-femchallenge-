@@ -93,13 +93,13 @@ function App() {
 	};
 
 	return (
-		<div className="container">
+		<div className="app">
 			<div className="column">
 				<form onSubmit={handleSubmit}>
-					<div class="header">
+					<header>
 						<h1>Mortgage Calculator</h1>
 						<Link onClick={handleClear}>Clear All</Link>
-					</div>
+					</header>
 					<div className="inputs">
 						<label htmlFor="amount">Mortgage Amount</label>
 						<Number
@@ -142,7 +142,9 @@ function App() {
 						</div>
 
 						<section className="mortgage-type">
-							<label htmlFor="">Mortgage Type</label>
+							<label htmlFor={`${formData.mortgageType}-repayment`}>
+								Mortgage Type
+							</label>
 							<Radios
 								inputName="mortgageType"
 								options={radioOptions}
