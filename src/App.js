@@ -153,7 +153,7 @@ function App() {
 								error={errors.mortgageType}
 							/>
 						</section>
-						<section className="total-repay"></section>
+						
 					</div>
 					<button type="submit">
 						<img src="/images/icon-calculator.svg" alt="Calculator Icon" />
