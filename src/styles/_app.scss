@@ -35,7 +35,7 @@ body {
 	font-size: 0.8rem;
 }
 
-.container {
+.app {
 	max-width: 800px;
 	border: 1px solid #ddd;
 	background-color: white;
@@ -108,7 +108,7 @@ body {
 	body {
 		max-height: none;
 	}
-	.container {
+	.app {
 		border-radius: 0;
 	}
 	.column {

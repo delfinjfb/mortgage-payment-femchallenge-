@@ -4,16 +4,16 @@ import "./radios.scss";
 const Radios = ({inputName, options, selectedValue, onChange, error}) => {
 	return (
 		<div className="radio-group ">
-			{options.map(option => (
+			{options.map((option, index) => (
 				<div
 					className={`radio-option  ${
 						selectedValue === option.value ? "selected" : ""
 					}`}
-					key={option.value}
+					key={index}
 				>
 					<input
 						type="radio"
-						id={option.value}
+						id={`${inputName}-${option.value}`}
 						name={inputName}
 						value={option.value}
 						checked={selectedValue === option.value}
