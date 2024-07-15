@@ -1,0 +1,15 @@
+.button {
+	background-color: unset;
+	border: none;
+	color: black;
+	text-decoration: underline;
+	font-size: 1em;
+	//float: right;
+	text-align: center;
+	display: inline-block;
+
+	&:hover {
+		background-color: unset;
+		text-decoration: none;
+	}
+}
