@@ -141,7 +141,10 @@ function App() {
 							</div>
 						</div>
 
-						<section className="mortgage-type">
+						<section
+							className="mortgage-type"
+							aria-label="Mortgage Type Section"
+						>
 							<label htmlFor={`${formData.mortgageType}-repayment`}>
 								Mortgage Type
 							</label>
@@ -153,7 +156,6 @@ function App() {
 								error={errors.mortgageType}
 							/>
 						</section>
-						
 					</div>
 					<button type="submit">
 						<img src="/images/icon-calculator.svg" alt="Calculator Icon" />
