@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# Mortgage Repayment Calculator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📋 Challenge Overview
 
-## Available Scripts
+This project is a Front End Mentor challenge to build a mortgage repayment calculator that looks as close as possible to the provided design. The goal is to practice creating an interactive, responsive application with attention to user experience and interface details.
 
-In the project directory, you can run:
+You can use any tools or frameworks to complete this challenge, so feel free to explore new libraries or tools you're interested in. The aim is to ensure a great experience for the users and a strong adherence to the provided design.
 
-### `npm start`
+see a preview site:
+https://mortgage-payment-react-delfin.vercel.app/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+challenge source:
+https://www.frontendmentor.io/challenges/mortgage-repayment-calculator-Galx1LXK73
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ✨ Features
 
-### `npm test`
+### User Requirements:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Input Information:** Users can input mortgage information (e.g., loan amount, interest rate, term) to calculate monthly and total repayments.
+- **Form Validation:** Users should see validation messages if any field is incomplete.
+- **Keyboard Accessibility:** Users can complete the entire form using only their keyboard, ensuring accessibility for all.
+- **Responsive Layout:** The interface should be responsive, providing an optimal viewing experience for different device sizes.
+- **Interactive States:** Users should see hover and focus states for all interactive elements, such as buttons and inputs.
 
-### `npm run build`
+## 🚀 Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
+To run this project, you need:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [Node.js](https://nodejs.org/) (LTS version recommended)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/delfinjfb/mortgage-payment-femchallenge-.git
+   ```
 
-### `npm run eject`
+2. **Navigate to the project folder**:
+   ```bash
+   cd mortgage-calculator
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Install dependencies**:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Running the Project
+To run the development server:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm start
+# or
+yarn start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Visit [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-## Learn More
+## 🛠️ Technologies Used
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **React**: JavaScript library for building user interfaces
+- **SCSS**: For styling the application, providing modular stylesheets
+- **React Router**: To navigate between pages such as the Privacy Policy and the main calculator
+- **Matomo Analytics** (without cookies): To track usage anonymously for development purposes
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🖋️ Design Notes
 
-### Code Splitting
+- The design files are included in the project. Follow these closely to ensure the final output matches the desired look.
+- Responsive layout is critical: use media queries or CSS-in-JS solutions to ensure proper adaptation for different screen sizes.
+- Provide focus styles to ensure that the entire interface is keyboard accessible and usable for all users.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📐 Project Structure
 
-### Analyzing the Bundle Size
+- **`public/`**: Contains static assets like images, the HTML template, and other public files.
+- **`src/`**: Main source directory for the project:
+  - **`components/`**: Holds reusable components such as form elements.
+  - **`pages/`**: Full pages, such as `PrivacyPolicy.js`.
+  - **`routes/`**: Contains routing logic, managed by `AppRouter.js`.
+  - **`styles/`**: Contains SCSS files used for styling.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📊 Analytics
+This is a personal project, and Matomo Analytics is used to collect anonymized data without using cookies. This helps in understanding usage patterns for development purposes.
 
-### Making a Progressive Web App
+## ⚠️ Privacy Policy
+This project is non-commercial, and no personal information is collected. You can view the full Privacy Policy [here](http://localhost:3000/privacy-policy).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📧 Contact
+If you have any questions or want to share your feedback, feel free to contact me.
 
-### Advanced Configuration
+## 🎨 License
+This project is for educational and non-commercial use only, as part of the Front End Mentor challenge.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
