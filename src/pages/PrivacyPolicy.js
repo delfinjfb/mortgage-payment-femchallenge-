@@ -27,6 +27,11 @@ function PrivacyPolicy() {
 							cookies.
 						</p>
 					</section>
+					<footer>
+						<a href="/" className="privacy-policy__link">
+							Back to Main Page
+						</a>
+					</footer>
 				</main>
 			</div>
 		</div>

@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import "./styles/_app.scss";
 import Radios from "./components/forms/radios/Radios.js";
 import Number from "./components/forms/input/number/Number.js";
-import Link from "./components/forms/link/Link.js";
+import {Link} from "react-router-dom";
 
 function App() {
 	const [formData, setFormData] = useState({
@@ -195,7 +195,7 @@ function App() {
 					</div>
 				</div>
 			</main>
-			<footer></footer>
+			<Link to="/privacy-policy">Privacy Policy</Link>
 		</>
 	);
 }
