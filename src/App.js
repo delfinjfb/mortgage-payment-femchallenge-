@@ -3,6 +3,7 @@ import "./styles/_app.scss";
 import Radios from "./components/forms/radios/Radios.js";
 import Number from "./components/forms/input/number/Number.js";
 import {Link} from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 function App() {
 	const [formData, setFormData] = useState({
@@ -94,6 +95,13 @@ function App() {
 
 	return (
 		<>
+		      <Helmet>
+        <title>Mortgage Repayment Calculator</title>
+        <meta
+          name="description"
+          content="Calculate your mortgage repayments easily using our interactive mortgage calculator. Get monthly and total repayment information tailored to your loan."
+        />
+      </Helmet>
 			<header></header>
 			<main>
 				<div className="app">

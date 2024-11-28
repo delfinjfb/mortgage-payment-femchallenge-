@@ -1,9 +1,17 @@
 import React from "react";
 import "./PrivacyPolicy.scss";
+import {Helmet} from "react-helmet";
 
 function PrivacyPolicy() {
 	return (
 		<div className="privacy-policy container">
+			<Helmet>
+				<title>Privacy Policy - Mortgage Repayment Calculator</title>
+				<meta
+					name="description"
+					content="Read our Privacy Policy to learn about how we handle your data. This is a personal project with no commercial use and privacy-friendly analytics."
+				/>
+			</Helmet>
 			<div className="privacy-policy__content">
 				<header>
 					<h1>Privacy Policy</h1>
