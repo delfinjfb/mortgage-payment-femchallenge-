@@ -45,6 +45,8 @@
     "eslint-config-prettier": "^10.0.1",
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-prettier": "^5.2.3",
+    "nth-check": "^2.1.1",
+    "postcss": "^8.5.1",
     "prettier": "^3.4.2"
   }
 }
