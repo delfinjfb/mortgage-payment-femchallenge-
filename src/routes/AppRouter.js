@@ -1,8 +1,8 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import App from "../App";
-import PrivacyPolicy from "../pages/PrivacyPolicy";
-import Matomo from "../utils/Matomo"; // Adjust the path accordingly
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import App from '../App';
+import PrivacyPolicy from '../pages/PrivacyPolicy';
+import Matomo from '../utils/Matomo'; // Adjust the path accordingly
 
 function AppRouter() {
   return (

@@ -25,18 +25,22 @@ https://www.frontendmentor.io/challenges/mortgage-repayment-calculator-Galx1LXK7
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 To run this project, you need:
 
 - [Node.js](https://nodejs.org/) (LTS version recommended)
 - [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
 ### Installation
+
 1. **Clone the repository**:
+
    ```bash
    git clone https://github.com/delfinjfb/mortgage-payment-femchallenge-.git
    ```
 
 2. **Navigate to the project folder**:
+
    ```bash
    cd mortgage-calculator
    ```
@@ -49,6 +53,7 @@ To run this project, you need:
    ```
 
 ### Running the Project
+
 To run the development server:
 
 ```bash
@@ -82,14 +87,17 @@ Visit [http://localhost:3000](http://localhost:3000) in your browser to view the
   - **`styles/`**: Contains SCSS files used for styling.
 
 ## 📊 Analytics
+
 This is a personal project, and Matomo Analytics is used to collect anonymized data without using cookies. This helps in understanding usage patterns for development purposes.
 
 ## ⚠️ Privacy Policy
+
 This project is non-commercial, and no personal information is collected. You can view the full Privacy Policy [here](http://localhost:3000/privacy-policy).
 
 ## 📧 Contact
+
 If you have any questions or want to share your feedback, feel free to contact me.
 
 ## 🎨 License
-This project is for educational and non-commercial use only, as part of the Front End Mentor challenge.
 
+This project is for educational and non-commercial use only, as part of the Front End Mentor challenge.

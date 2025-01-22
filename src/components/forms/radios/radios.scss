@@ -1,43 +1,43 @@
-@use "/src/styles/colors.module.scss";
+@use '/src/styles/colors.module.scss';
 
 .radio-group {
-	position: relative;
-	margin-bottom: 3em;
+  position: relative;
+  margin-bottom: 3em;
 }
 .radio-option {
-	display: flex;
-	align-items: center;
-	margin-bottom: 20px;
-	border: 1px solid colors.$blue-dark;
-	border-radius: 4px;
-	&:hover {
-		border: 1px solid colors.$primary-green;
-		cursor: pointer;
-	}
-	&.selected {
-		background-color: colors.$active-green;
-		border-color: colors.$primary-green;
-	}
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 1px solid colors.$blue-dark;
+  border-radius: 4px;
+  &:hover {
+    border: 1px solid colors.$primary-green;
+    cursor: pointer;
+  }
+  &.selected {
+    background-color: colors.$active-green;
+    border-color: colors.$primary-green;
+  }
 }
 
-.radio-option input[type="radio"] {
-	margin-right: 10px;
-	width: 50px;
-	margin: 15px;
+.radio-option input[type='radio'] {
+  margin-right: 10px;
+  width: 50px;
+  margin: 15px;
 }
 
 .radio-option label {
-	margin-right: 20px;
-	font-weight: bold;
+  margin-right: 20px;
+  font-weight: bold;
 }
 input.error {
-	border-color: red;
+  border-color: red;
 }
 
 .error {
-	color: red;
-	font-size: 0.75rem;
-	position: absolute;
-	bottom: -40px;
-	left: 0;
+  color: red;
+  font-size: 0.75rem;
+  position: absolute;
+  bottom: -40px;
+  left: 0;
 }
