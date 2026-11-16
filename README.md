@@ -79,11 +79,11 @@ Visit [http://localhost:3000](http://localhost:3000) in your browser to view the
 
 ## 📐 Project Structure
 
-- **`public/`**: Contains static assets like images, the HTML template, and other public files.
+- **`public/`**: Contains static assets like images, and other public files.
 - **`src/`**: Main source directory for the project:
   - **`components/`**: Holds reusable components such as form elements.
-  - **`pages/`**: Full pages, such as `PrivacyPolicy.js`.
-  - **`routes/`**: Contains routing logic, managed by `AppRouter.js`.
+  - **`pages/`**: Full pages, such as `PrivacyPolicy.jsx`.
+  - **`routes/`**: Contains routing logic, managed by `AppRouter.jsx`.
   - **`styles/`**: Contains SCSS files used for styling.
 
 ## 📊 Analytics
@@ -101,3 +101,17 @@ If you have any questions or want to share your feedback, feel free to contact m
 ## 🎨 License
 
 This project is for educational and non-commercial use only, as part of the Front End Mentor challenge.
+
+## Build and security checks
+
+The project uses Vite and Vitest in place of deprecated Create React App tooling.
+Node.js 20.18 or newer is required. The development server uses port 3000 and
+production assets are generated in `build/`. Deployments should run `npm run build`,
+serve `build/`, and rewrite client-side routes to `index.html`.
+
+```bash
+npm ci
+npm test
+npm run build
+npm audit
+```

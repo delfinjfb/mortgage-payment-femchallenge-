@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './styles/_app.scss';
-import Radios from './components/forms/radios/Radios.js';
-import Number from './components/forms/input/number/Number.js';
+import Radios from './components/forms/radios/Radios.jsx';
+import Number from './components/forms/input/number/Number.jsx';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
@@ -109,7 +109,7 @@ function App() {
             <form onSubmit={handleSubmit}>
               <header>
                 <h1>Mortgage Calculator</h1>
-                <Link onClick={handleClear}>Clear All</Link>
+                <Link to="/" onClick={handleClear}>Clear All</Link>
               </header>
               <div className="inputs">
                 <label htmlFor="amount">Mortgage Amount</label>
